@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker - Manage Your Daily Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <span>✓</span>
+                Task Tracker
+            </h1>
+            <p>Stay organized and boost your productivity</p>
+        </header>
+
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-box">
+                <h3 id="totalTasks">0</h3>
+                <p>Total Tasks</p>
+            </div>
+            <div class="stat-box">
+                <h3 id="completedTasks">0</h3>
+                <p>Completed</p>
+            </div>
+            <div class="stat-box">
+                <h3 id="pendingTasks">0</h3>
+                <p>Pending</p>
+            </div>
+        </div>
+
+        <!-- Add Task Card -->
+        <div class="card">
+            <h2 style="margin-bottom: 1.5rem; color: #667eea;">➕ Add New Task</h2>
+            <form class="add-task-form" id="taskForm">
+                <div class="form-row">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        placeholder="What needs to be done?" 
+                        required
+                    >
+                    <select class="priority-select" id="prioritySelect">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </div>
+
+        <!-- Tasks Display Card -->
+        <div class="card">
+            <h2 style="margin-bottom: 1.5rem; color: #667eea;">📋 Your Tasks</h2>
+            
+            <!-- Search -->
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="🔍 Search tasks..."
+                >
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="tab active" data-filter="all">All Tasks</button>
+                <button class="tab" data-filter="pending">Pending</button>
+                <button class="tab" data-filter="completed">Completed</button>
+                <button class="tab" data-filter="high">High Priority</button>
+            </div>
+
+            <!-- Tasks List -->
+            <ul class="tasks-list" id="tasksList">
+                <div class="empty-state">
+                    <h3>No tasks yet!</h3>
+                    <p>Add your first task to get started 🚀</p>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
